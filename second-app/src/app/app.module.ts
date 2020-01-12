@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MessageComponent } from './message/message.component';
+import { FailedMessageComponent } from './failed-message/failed-message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MessageComponent
+    FailedMessageComponent
   ],
   imports: [
     BrowserModule
