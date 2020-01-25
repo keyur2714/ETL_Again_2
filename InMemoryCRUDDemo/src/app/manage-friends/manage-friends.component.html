@@ -1,0 +1,46 @@
+<div class="row" *ngIf="message !== ''">
+    <div class="col alert alert-info">
+        {{message}}
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-sm-9">
+        <!-- <input type="text" name=friendName class="form-control" #friendName/> -->
+        <input type="text" name=friendName class="form-control" [(ngModel)]="friendName" />
+        <!-- {{friendName}} -->
+    </div>
+    <div class="col-sm-2">
+        <!-- <button class="btn btn-info" (click)="addFriend(friendName.value)">Add</button> -->
+        <button class="btn btn-info" (click)="addFriend()" *ngIf="! isUpdate">Add</button>
+        <button class="btn btn-info" (click)="updateFriend()" *ngIf="isUpdate">Update</button>
+        
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                Manage Friends
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let fn of friendsNames;let i=index">
+                            <td>{{fn}}</td>
+                            <td>
+                                <button class="btn btn-success m-1" (click)="edit(i)">Edit</button>
+                                <button class="btn btn-danger m-1" (click)="delete(i)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
