@@ -38,6 +38,8 @@ export class ManageFriendsComponent implements OnInit {
     let name = this.friendName;
     if(this.friendsNames.indexOf(name) === -1){
       this.friendsNames[this.updateIdx] = name;
+      this.isUpdate = false;
+      this.updateIdx = -1;
       this.message = '';
     }else{
       //alert(name+" Already Exists.");
