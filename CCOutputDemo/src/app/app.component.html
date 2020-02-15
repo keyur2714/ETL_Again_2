@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <app-message
+      [message]="'Keyur'"
+      (getFormattedMessage)="getNewMsg($event)"
+      >        
+      </app-message>
+    </div>
+    <div class="col">
+      <app-message [message]="newMsg"></app-message>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col">
+      <app-registration></app-registration>
+    </div>
+  </div>
+</div>
