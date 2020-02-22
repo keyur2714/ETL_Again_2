@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row form-group">
+    <div class="col">
+      <h1 app-mydir>{{title}}</h1>
+    </div>
+    <div class="col">
+      <p app-mydir>Radhe Krishna...!</p>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      Change Text Color :
+      <select name="changeColor" #changeColor (change)="changeStyle()" class="form-control">
+        <option value="-1">-:Select Color:-</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">Name:</div>
+    <div class="col">
+      <input type="text" name=name #name class="form-control" appMyStyle [color]="'blue'" [bg-color]="bgColor" [font-size]="'35px'">
+    </div>
+  </div>
+</div>
