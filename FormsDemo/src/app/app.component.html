@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form #f=ngForm (ngSubmit)="save(f)">
+        Name : <input type="text" class="form-control" name=name ngModel required />
+        <button class="btn btn-info">Submit</button>
+      </form>
+    </div>    
+  </div>
+</div>
