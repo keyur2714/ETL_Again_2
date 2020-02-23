@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row" *appLoop="3">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row" *appLoop="loopCounter;maxIndex:7">
+    <div class="col">
+      <p>Hello Radhe Krishna...!</p>
+    </div>
+  </div>
+  <ng-template [appLoop]="3" [appLoopMaxIndex]="11">
+    <div class="row">
+      <div class="col">
+        <p>Good Afternoon...!</p>
+      </div>
+    </div>
+  </ng-template>
+  <div class="row" *appMyIf="age >= 18">
+    <div class="col">
+      <p>You Are Eligible for voting...!</p>
+    </div>
+  </div>
+  <ng-template #elseBlock>
+    <div class="row">
+      <div class="col">
+        <p>You Are Not Eligible for voting...!</p>
+      </div>
+    </div>
+  </ng-template>
+  
+</div>
