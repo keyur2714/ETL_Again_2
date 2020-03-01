@@ -1,0 +1,87 @@
+<form #frm=ngForm (ngSubmit)="save(frm)">
+    <div class="row form-group">
+        <div class="col-sm-2"><sup>*</sup>Id :</div>
+        <div class="col-sm-4">
+            <input type="text" name=id [(ngModel)]="inquiry.id" #id=ngModel class="form-control" required/>
+        </div>
+        <div class="col-sm-4" *ngIf="id.invalid && id.touched">
+            Id is mandatory field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-2"><sup>*</sup>Name :</div>
+        <div class="col-sm-4">
+            <input type="text" name=name [(ngModel)]="inquiry.name" #name=ngModel class="form-control" required pattern="^[a-zA-Z]+$"/>
+        </div>
+        <div class="col-sm-4" *ngIf="name.invalid && name.touched">
+            <div *ngIf="name.errors['required']">
+                Name is mandatory field.
+            </div>
+            <div *ngIf="name.errors['pattern']">
+                Name must be in Alphabets.
+            </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-2"><sup>*</sup>Mobile No :</div>
+        <div class="col-sm-4">
+            <input type="text" name=mobileNo [(ngModel)]="inquiry.mobileNo" #mobileNo=ngModel class="form-control" required minlength="10" maxlength="10" pattern="^[0-9]+$"/>
+        </div>
+        <div class="col-sm-4" *ngIf="mobileNo.invalid && mobileNo.touched">
+            <div *ngIf="mobileNo.errors['required']">
+                Mobile Number is mandatory field.
+            </div>
+            <div *ngIf="mobileNo.errors['minlength']">
+                Mobile Number must be in 10 digits.
+            </div>
+            <div *ngIf="mobileNo.errors['pattern']">
+                Mobile Number must be in Digits.
+            </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-2"><sup>*</sup>Email :</div>
+        <div class="col-sm-4">
+            <input type="text" name=email [(ngModel)]="inquiry.email" #email=ngModel class="form-control" required email />
+        </div>
+        <div class="col-sm-4" *ngIf="email.invalid && email.touched">
+            <div *ngIf="email.errors['required']">
+                Email is mandatory field.
+            </div>
+            <div *ngIf="email.errors['email']">
+                Invalid Email Address.
+            </div>            
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-2"><sup>*</sup>Course :</div>
+        <div class="col-sm-4">
+            <select name="course" [(ngModel)]="inquiry.course" #course=ngModel class="form-control" required>
+                <option value="-1">-:Select Course:-</option>
+                <option *ngFor="let course of courseList" [ngValue]="course">
+                    {{course.name}}
+                </option>
+            </select>
+        </div>
+        <div class="col-sm-4" *ngIf="course.invalid && course.touched">
+            Course is required field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-2">Gender :</div>
+        <div class="col-sm-4">
+            <input type="radio" name=gender value="M" [(ngModel)]="inquiry.gender" class="radio-inline">Male
+            <input type="radio" name=gender value="F" [(ngModel)]="inquiry.gender" class="radio-inline">Female
+        </div>        
+    </div>
+    <div class="row form-group">
+        <div class="col">
+            <button class="btn btn-info" [disabled]="frm.invalid">Save</button>
+        </div>
+    </div>
+</form>
+<div class="row" *ngIf="isSubmitted">
+    <div class="col">
+        {{inquiry.name}}
+    </div>
+</div>
