@@ -1,0 +1,69 @@
+<form [formGroup]="recipeEntryForm" (ngSubmit)="save()">
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Recipe Name :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" [formControlName]="'name'" />
+        </div>
+        <div class="col-sm-4" *ngIf="recipeEntryForm.get('name').touched && recipeEntryForm.get('name').invalid">
+            Recipe Name is required field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Cuisine :
+        </div>
+        <div class="col-sm-4">
+            <select [formControlName]="'cuisine'" class="form-control">
+                <option value="-1">-:Select Cuisine:-</option>
+                <option value="GUJ">Gujrati</option>
+                <option value="PUN">Punjabi</option>
+                <option value="MH">Maharashtra</option>
+                <option value="RJ">Rajasthani</option>
+                <option value="IND">Namkeen</option>
+            </select>
+        </div>
+    </div>
+    <div [formArrayName]="'ingredients'">        
+        <div class="row form-group" *ngFor="let ing of recipeEntryForm.get('ingredients').controls;let i=index">            
+            <div class="col-sm-4">
+                Ingredients-{{i+1}} :
+            </div>
+            <div class="col-sm-4">
+                <input type="text" name="ing_{{i}}" [formControlName]="i" class="form-control">
+            </div>            
+            <div class="col-sm-4">
+                <button class="btn btn-info" type="button" (click)="add()">Add More</button>    
+            </div>                
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-4">
+            <button class="btn btn-info" [disabled]="recipeEntryForm.invalid">Save</button>
+        </div>
+    </div>
+</form>
+<div class="row" *ngIf="isSubmitted">
+    <div class="col">
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <td>{{newRecipe.name}}</td>
+            </tr>
+            <tr>
+                <th>Cuisine</th>
+                <td>{{newRecipe.cuisine}}</td>
+            </tr>
+            <tr>
+                <th>Ingredients</th>
+                <td>
+                    <ul *ngFor="let ing of newRecipe.ingredients">
+                        <li>{{ing}}</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
