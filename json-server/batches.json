@@ -1,0 +1,36 @@
+{
+  "batches": [
+    {
+      "id": 1,
+      "batchName": "ETLAgain_2",
+      "courseName": "Angular",
+      "fees": 12000
+    },
+    {
+      "id": 2,
+      "batchName": "ETLAgain_1",
+      "courseName": "Java",
+      "fees": 10000
+    },
+    {
+      "id": 3,
+      "batchName": "ETLAgain_5",
+      "courseName": "PHP",
+      "fees": 15000
+    }
+  ],
+  "students" : [
+	{
+		"id" : 27,
+		"name" : "keyur",
+		"mobileNo" : "7387029671",
+		"email" : "keyurjava27@gmail.com"
+	},
+	{
+		"id" : 26,
+		"name" : "denish",
+		"mobileNo" : "7387029111",
+		"email" : "denishjava26@gmail.com"
+	}
+  ]
+}

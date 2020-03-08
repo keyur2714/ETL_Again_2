@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RecipeEntryComponent } from './recipe-entry/recipe-entry.component';
+import { BatchEntryComponent } from './batch-entry/batch-entry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RecipeEntryComponent
+    RecipeEntryComponent,
+    BatchEntryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,62 @@
+<form [formGroup]="batchEntryForm" (ngSubmit)="save()">
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Id :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" formControlName="id" class="form-control" name=id />
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Batch Name :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" formControlName="batchName" class="form-control" name=batchName />
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Course Name :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" formControlName="courseName" class="form-control" name=courseName />
+        </div>
+    </div>
+    <div formArrayName="students">
+        <button type="button" class="btn btn-info" (click)="addNewStudent()">Add New</button>
+        <div *ngFor="let studControl of batchEntryForm.get('students').controls;let i=index">            
+            <div [formGroupName]="i">
+                <div class="row form-group">
+                    <div class="col-sm-4">Roll No:</div>
+                    <div class="col-sm-4">
+                        <input type="text" name=rollNo formControlName="rollNo" class="form-control" >
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">Name :</div>
+                    <div class="col-sm-4">
+                        <input type="text" name=name formControlName="name" class="form-control" >
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">Mobile No:</div>
+                    <div class="col-sm-4">
+                        <input type="text" name=mobileNo formControlName="mobileNo" class="form-control" >
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">Email:</div>
+                    <div class="col-sm-4">
+                        <input type="text" name=email formControlName="email" class="form-control" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <button class="btn btn-success">Save</button>
+        </div>
+    </div>
+</form>
