@@ -1,0 +1,18 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Batch Id</th>
+            <th>Batch Name</th>
+            <th>Course Name</th>
+            <th>Fees</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let batch of batchList">
+            <td>{{batch.id}}</td>
+            <td>{{batch.batchName}}</td>
+            <td>{{batch.courseName}}</td>
+            <td>{{batch.fees}}</td>
+        </tr>
+    </tbody>
+</table>
