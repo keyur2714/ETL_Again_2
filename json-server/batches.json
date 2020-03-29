@@ -3,50 +3,50 @@
     {
       "id": 1,
       "batchName": "ETLAgain_2",
-      "courseName": "Angular",
-      "fees": 12000	  
+      "courseName": "BigData",
+      "fees": "15000"
     },
     {
       "id": 2,
       "batchName": "ETLAgain_1",
       "courseName": "Java",
-      "fees": 10000
+      "fees": "12000"
     },
     {
       "id": 3,
       "batchName": "ETLAgain_5",
-      "courseName": "PHP",
-      "fees": 15000
+      "courseName": "Python",
+      "fees": "12000"
     }
   ],
-  "students" : [
-	{
-		"id" : 27,
-		"name" : "keyur",
-		"mobileNo" : "7387029671",
-		"email" : "keyurjava27@gmail.com",
-		"batchId":1
-	},
-	{
-		"id" : 26,
-		"name" : "denish",
-		"mobileNo" : "7387029111",
-		"email" : "denishjava26@gmail.com",
-		"batchId":2
-	},
-	{
-		"id" : 44,
-		"name" : "vinit",
-		"mobileNo" : "9879534778",
-		"email" : "vinit44@gmail.com",
-		"batchId":1
-	},
-	{
-		"id" : 54,
-		"name" : "piyush",
-		"mobileNo" : "9879531111",
-		"email" : "piyush44@gmail.com",
-		"batchId":2
-	}	
+  "students": [
+    {
+      "id": 27,
+      "name": "keyur",
+      "mobileNo": "7387029671",
+      "email": "keyurjava27@gmail.com",
+      "batchId": 1
+    },
+    {
+      "id": 26,
+      "name": "denish",
+      "mobileNo": "7387029111",
+      "email": "denishjava26@gmail.com",
+      "batchId": 2
+    },
+    {
+      "id": 44,
+      "name": "vinit",
+      "mobileNo": "9879534778",
+      "email": "vinit44@gmail.com",
+      "batchId": 1
+    },
+    {
+      "id": 54,
+      "name": "piyush",
+      "mobileNo": "9879531111",
+      "email": "piyush44@gmail.com",
+      "batchId": 2
+    }
   ]
 }

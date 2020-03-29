@@ -1,0 +1,60 @@
+<form [formGroup]="batchEntryForm" (ngSubmit)="save()">
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Batch Id:
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=id formControlName="id" class="form-control" [readonly]="action === 'Edit'">
+        </div>
+        <div class="col-sm-4" *ngIf="batchEntryForm.get('id').invalid && batchEntryForm.get('id').touched">
+            Batch Id is Mandatory Field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Batch Name:
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=batchName formControlName="batchName" class="form-control">
+        </div>
+        <div class="col-sm-4" *ngIf="batchEntryForm.get('batchName').invalid && batchEntryForm.get('batchName').touched">
+            Batch Name is Mandatory Field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Course Name:
+        </div>
+        <div class="col-sm-4">
+            <select name="courseName" formControlName="courseName" class="form-control">
+                <option value="-1">-:Select Course:-</option>
+                <option value="Angular">Angular</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+                <option value="BigData">BigData</option>
+                <option value="DataScience">Data Science</option>
+            </select>
+        </div>
+        <div class="col-sm-4" *ngIf="batchEntryForm.get('courseName').invalid && batchEntryForm.get('courseName').touched">
+            <span *ngIf="batchEntryForm.get('courseName').errors['required']">Course Name is Mandatory Field.</span>
+            <span *ngIf="batchEntryForm.get('courseName').errors['invalidName']">Invalid Course Name.</span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Fees:
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=fees formControlName="fees" class="form-control">
+        </div>
+        <div class="col-sm-4" *ngIf="batchEntryForm.get('batchName').invalid && batchEntryForm.get('batchName').touched">
+            Fees is Mandatory Field.
+        </div>
+    </div>
+    <div class="ro form-group">
+        <div class="col-sm-4">
+            <button class="btn btn-info" [disabled]="batchEntryForm.invalid" *ngIf="action === 'save'">Save</button>
+            <button class="btn btn-info" [disabled]="batchEntryForm.invalid" *ngIf="action === 'Edit'">Update</button>
+        </div>
+    </div>
+</form>

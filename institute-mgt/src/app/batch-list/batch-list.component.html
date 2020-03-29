@@ -1,3 +1,5 @@
+<p class="m-5"></p>
+<app-batch-entry [batchId]="batchId" [action]="action" (isSaved)="refreshData($event)"></app-batch-entry>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -5,6 +7,7 @@
             <th>Batch Name</th>
             <th>Course Name</th>
             <th>Fees</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +16,10 @@
             <td>{{batch.batchName}}</td>
             <td>{{batch.courseName}}</td>
             <td>{{batch.fees}}</td>
+            <td>
+                <button class="btn btn-success m-1" (click)="edit(batch.id)">Edit</button>
+                <button class="btn btn-danger m-1" (click)="delete(batch.id)">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>
