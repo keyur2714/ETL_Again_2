@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { BatchService } from '../services/batch.service';
 import { Batch } from '../batch-list/batch.model';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-batch-entry',
@@ -17,10 +19,21 @@ export class BatchEntryComponent implements OnInit {
   @Output() isSaved =new EventEmitter<boolean>(); 
   batchEntryForm : FormGroup;
 
-  constructor(private formBuilder : FormBuilder,private batchService : BatchService) { }
+  constructor(private formBuilder : FormBuilder,private batchService : BatchService,private activatedRoute : ActivatedRoute,private location:Location) { }
 
   ngOnInit() {
     this.createBatchEntryForm();       
+    this.activatedRoute.params.subscribe(
+      (param)=>{
+        //alert(param.id);
+        this.batchId = param.id;
+        this.setBatchEntryFormValues();
+      }
+    )
+  }
+
+  back() : void{
+    this.location.back();
   }
 
   createBatchEntryForm():void{
@@ -35,7 +48,7 @@ export class BatchEntryComponent implements OnInit {
   }
 
   setBatchEntryFormValues(){
-    alert(this.batchId);
+    //alert(this.batchId);
     this.batchService.getBatchById(this.batchId).subscribe(
       (data : Batch)=>{
         this.batchEntryForm.setValue(data);

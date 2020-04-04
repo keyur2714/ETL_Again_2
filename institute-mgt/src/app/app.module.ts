@@ -7,12 +7,20 @@ import { AppComponent } from './app.component';
 import { BatchListComponent } from './batch-list/batch-list.component';
 import { LoggingService } from './services/logging.service';
 import { BatchEntryComponent } from './batch-entry/batch-entry.component';
+import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BatchListComponent,
-    BatchEntryComponent
+    BatchEntryComponent,
+    HomeComponent,
+    AboutusComponent,
+    ContactusComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

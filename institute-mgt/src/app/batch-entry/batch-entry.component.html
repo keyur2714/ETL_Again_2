@@ -53,8 +53,9 @@
     </div>
     <div class="ro form-group">
         <div class="col-sm-4">
-            <button class="btn btn-info" [disabled]="batchEntryForm.invalid" *ngIf="action === 'save'">Save</button>
-            <button class="btn btn-info" [disabled]="batchEntryForm.invalid" *ngIf="action === 'Edit'">Update</button>
+            <button class="btn btn-info m-1" [disabled]="batchEntryForm.invalid" *ngIf="action === 'save'">Save</button>
+            <button class="btn btn-info m-1" [disabled]="batchEntryForm.invalid" *ngIf="action === 'Edit'">Update</button>
+            <button class="btn btn-secondary m-1" (click)="back()">Back</button>
         </div>
     </div>
 </form>

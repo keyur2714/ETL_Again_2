@@ -3,6 +3,8 @@ import { LoggingService } from '../services/logging.service';
 import { BatchService } from '../services/batch.service';
 import { Batch } from './batch.model';
 import { BatchEntryComponent } from '../batch-entry/batch-entry.component';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-batch-list',
@@ -20,7 +22,7 @@ export class BatchListComponent implements OnInit {
   @ViewChild(BatchEntryComponent,{static : false})
   batchEntryComponent : BatchEntryComponent;
 
-  constructor(private loggingService : LoggingService,private batchService : BatchService) { }
+  constructor(private loggingService : LoggingService,private batchService : BatchService,private location: Location,private router:Router) { }
 
   ngOnInit() {
     this.loggingService.logInfo("Batch List Component Object Created...!");
@@ -39,10 +41,14 @@ export class BatchListComponent implements OnInit {
     )
   }
 
-  edit(id : number) : void {    
-    this.batchEntryComponent.action = 'Edit';
-    this.batchEntryComponent.batchId = id;
-    this.batchEntryComponent.setBatchEntryFormValues();
+  // edit(id : number) : void {    
+  //   this.batchEntryComponent.action = 'Edit';
+  //   this.batchEntryComponent.batchId = id;
+  //   this.batchEntryComponent.setBatchEntryFormValues();
+  // }
+
+  edit(batchId : number) : void {    
+    this.router.navigate(['batchEdit',batchId]);  
   }
 
   delete(id : number) : void{
@@ -61,5 +67,9 @@ export class BatchListComponent implements OnInit {
     if(flag){
       this.getBatchList();
     }
+  }
+  
+  back() : void{
+    this.location.back();
   }
 }
