@@ -11,6 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AuthenticationService } from './auth/authentication.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { AdminComponent } from './admin/admin.component';
     HomeComponent,
     AboutusComponent,
     ContactusComponent,
-    AdminComponent
+    AdminComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,9 @@ import { AdminComponent } from './admin/admin.component';
     HttpClientModule
   ],
   providers: [
-    LoggingService
+    LoggingService,
+    AuthenticationService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

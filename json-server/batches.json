@@ -1,4 +1,22 @@
 {
+  "users": [
+	{	
+		"id" : 1,
+		"username" : "keyur27",
+		"password" : "India@123",	
+		"name" : "keyur",
+		"role" : "ADMIN",
+		"token" : "keyur2712345"
+	},
+	{	
+		"id" : 2,
+		"username" : "denish26",
+		"password" : "Bharat@123",	
+		"name" : "denish",
+		"role" : "USER",
+		"token" : "denish2612345"
+	}
+  ],
   "batches": [
     {
       "id": 1,

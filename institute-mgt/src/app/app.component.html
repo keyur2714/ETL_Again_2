@@ -15,11 +15,17 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="'contact-us'" [routerLinkActive]="'activate'">Contact Us</a>
           </li>
+          <li class="nav-item" *ngIf="! isLoggedIn">
+            <a class="nav-link" [routerLink]="'signin'" [routerLinkActive]="'activate'">Sign In</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link" [routerLink]="'signout'" [routerLinkActive]="'activate'">Sign Out</a>
+          </li>
         </ul>
       </nav>
     </div>
   </div>
   <div class="row">        
-    <div class="col"><router-outlet></router-outlet></div>
+    <div class="col"><router-outlet (activate)="checkIsLoggedIn()"></router-outlet></div>
   </div>
 </div>

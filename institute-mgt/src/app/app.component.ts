@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggingService } from './services/logging.service';
+import { AuthenticationService } from './auth/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,14 @@ import { LoggingService } from './services/logging.service';
 })
 export class AppComponent implements OnInit{
   title = 'institute-mgt';
-  constructor(private loggingService : LoggingService){}
+  isLoggedIn : boolean = false;
+  constructor(private loggingService : LoggingService,private authenticationService : AuthenticationService){}
 
   ngOnInit(){
     this.loggingService.logInfo("App Component Inititalized....!");
+  }
+
+  checkIsLoggedIn() : void {
+    this.isLoggedIn = this.authenticationService.isLoggedIn;
   }
 }
