@@ -1,7 +1,9 @@
 <p class="m-1">
-    <button class="btn btn-info" (click)="back()">Back</button>
+    <button class="btn btn-secondary m-1" (click)="back()">Back</button>
+    <button class="btn btn-info m-1" (click)="add()">Add</button>
 </p>
-<app-batch-entry [batchId]="batchId" [action]="action" (isSaved)="refreshData($event)"></app-batch-entry>
+<!-- <app-batch-entry [batchId]="batchId" [action]="action" (isSaved)="refreshData($event)"></app-batch-entry> -->
+
 <table class="table table-bordered">
     <thead>
         <tr>

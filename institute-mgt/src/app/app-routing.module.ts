@@ -14,9 +14,15 @@ import { AuthGuardService } from './auth/auth-guard.service';
 const routes: Routes = [
   {path : 'home' , component : HomeComponent, canActivate : [AuthGuardService]},
   {path : 'aboutus' , component : AboutusComponent},
-  {path : 'admin' , component : AdminComponent, canActivate : [AuthGuardService]},
-  {path : 'batchList', component : BatchListComponent},
-  {path : 'batchEdit/:id',component : BatchEntryComponent},
+  {
+    path : 'admin' , component : AdminComponent, canActivate : [AuthGuardService],
+    canActivateChild : [AuthGuardService],
+    children : [
+      {path : 'batchList', component : BatchListComponent},    
+      {path : 'batchAdd',component : BatchEntryComponent},
+      {path : 'batchEdit/:id',component : BatchEntryComponent}
+    ]
+  },  
   {path : 'contact-us', component : ContactusComponent},
   {path : 'signin', component : LoginComponent},
   {path : 'signout', component : LogoutComponent},

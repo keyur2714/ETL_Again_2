@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Batch } from '../batch-list/batch.model';
+import { User } from '../auth/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,12 @@ export class BatchService {
   constructor(private httpClient : HttpClient) { }
 
   getBatchList() : Observable<Batch[]> {
-    return this.httpClient.get<Batch[]>(this.appUrl);
+    let user : User = JSON.parse(sessionStorage.getItem("loggedInUser"));
+    return this.httpClient.get<Batch[]>(this.appUrl,{'headers':{'authentication':'Berear '+user.token}});
   }
 
-  save(batch : Batch) : Observable<Batch> {
-    return this.httpClient.post<Batch>(this.appUrl,batch);
+  save(batch : Batch) : Observable<Batch> {    
+    return this.httpClient.post<Batch>(this.appUrl,batch);   
   }
 
   update(batch : Batch) : Observable<Batch>{

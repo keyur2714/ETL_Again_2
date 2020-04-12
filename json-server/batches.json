@@ -1,21 +1,21 @@
 {
   "users": [
-	{	
-		"id" : 1,
-		"username" : "keyur27",
-		"password" : "India@123",	
-		"name" : "keyur",
-		"role" : "ADMIN",
-		"token" : "keyur2712345"
-	},
-	{	
-		"id" : 2,
-		"username" : "denish26",
-		"password" : "Bharat@123",	
-		"name" : "denish",
-		"role" : "USER",
-		"token" : "denish2612345"
-	}
+    {
+      "id": 1,
+      "username": "keyur27",
+      "password": "India@123",
+      "name": "keyur",
+      "role": "ADMIN",
+      "token": "keyur2712345"
+    },
+    {
+      "id": 2,
+      "username": "denish26",
+      "password": "Bharat@123",
+      "name": "denish",
+      "role": "USER",
+      "token": "denish2612345"
+    }
   ],
   "batches": [
     {
@@ -28,13 +28,19 @@
       "id": 2,
       "batchName": "ETLAgain_1",
       "courseName": "Java",
-      "fees": "12000"
+      "fees": "10000"
     },
     {
       "id": 3,
       "batchName": "ETLAgain_5",
       "courseName": "Python",
-      "fees": "12000"
+      "fees": "13000"
+    },
+    {
+      "id": "9",
+      "batchName": "E_Angular_8",
+      "courseName": "Angular",
+      "fees": "13800"
     }
   ],
   "students": [

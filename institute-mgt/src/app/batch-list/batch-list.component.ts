@@ -48,7 +48,11 @@ export class BatchListComponent implements OnInit {
   // }
 
   edit(batchId : number) : void {    
-    this.router.navigate(['batchEdit',batchId]);  
+    this.router.navigate(['admin/batchEdit',batchId]);  
+  }
+
+  add() : void {
+    this.router.navigate(['admin/batchAdd']);  
   }
 
   delete(id : number) : void{

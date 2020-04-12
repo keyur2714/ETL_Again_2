@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { BatchService } from '../services/batch.service';
 import { Batch } from '../batch-list/batch.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -19,7 +19,7 @@ export class BatchEntryComponent implements OnInit {
   @Output() isSaved =new EventEmitter<boolean>(); 
   batchEntryForm : FormGroup;
 
-  constructor(private formBuilder : FormBuilder,private batchService : BatchService,private activatedRoute : ActivatedRoute,private location:Location) { }
+  constructor(private formBuilder : FormBuilder,private batchService : BatchService,private activatedRoute : ActivatedRoute,private location:Location,private router : Router) { }
 
   ngOnInit() {
     this.createBatchEntryForm();       
@@ -59,30 +59,22 @@ export class BatchEntryComponent implements OnInit {
   save():void{
     //console.log(this.batchEntryForm.value);
     if(this.batchEntryForm.valid){
-      let batch : Batch= this.batchEntryForm.value;
-      if(this.action === 'save'){        
-        this.batchService.save(batch).subscribe(
-        (data : Batch)=>{
-          alert("Batch Created with Id : "+data.id);
-          this.isSaved.emit(true);
-          }
-        )
-      }else{
+      let batch : Batch= this.batchEntryForm.value;      
+      if(this.batchId > 0){
         this.batchService.update(batch).subscribe(
-        (data : Batch)=>{
-          alert("Batch Updated with Id : "+data.id);
-          this.isSaved.emit(true);
-          this.action = 'save';
-          this.batchId = 0;
-          this.batchEntryForm.setValue({
-            id : '',
-            batchName : '',
-            courseName : '-1',
-            fees : 0
-          });
-          }
-        )
-      }      
+          (data : Batch)=>{
+            alert("Batch Updated with Id : "+data.id);
+            this.router.navigate(['admin/batchList']);
+            }
+          )
+      }else{
+        this.batchService.save(batch).subscribe(
+          (data : Batch)=>{
+            alert("Batch Created with Id : "+data.id);
+            this.router.navigate(['admin/batchList']);
+            }
+          )
+      }            
     }
   }
 
