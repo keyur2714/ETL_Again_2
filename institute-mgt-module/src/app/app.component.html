@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav class="navbar navbar-expand-sm bg-warning navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item ">
+            <a class="nav-link" [routerLink]="'home'" [queryParams]="{name:'keyur',city:'pune'}" [routerLinkActive]="'activate'" >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'aboutus'" [routerLinkActive]="'activate'">About US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'admin'" [routerLinkActive]="'activate'">Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'contact-us'" [routerLinkActive]="'activate'">Contact Us</a>
+          </li>
+          <li class="nav-item" *ngIf="! isLoggedIn">
+            <a class="nav-link" [routerLink]="'signin'" [routerLinkActive]="'activate'">Sign In</a>
+          </li>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link" [routerLink]="'signout'" [routerLinkActive]="'activate'">Sign Out</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">        
+    <div class="col"><router-outlet (activate)="checkIsLoggedIn()"></router-outlet></div>
+  </div>
+</div>

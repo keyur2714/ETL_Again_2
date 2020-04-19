@@ -1,0 +1,30 @@
+<p class="m-1">
+    <button class="btn btn-secondary m-1" (click)="back()">Back</button>
+    <button class="btn btn-info m-1" (click)="add()">Add</button>
+</p>
+<!-- <app-batch-entry [batchId]="batchId" [action]="action" (isSaved)="refreshData($event)"></app-batch-entry> -->
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Batch Id</th>
+            <th>Batch Name</th>
+            <th>Course Name</th>
+            <th>Fees</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let batch of batchList">
+            <td>{{batch.id}}</td>
+            <td>{{batch.batchName}}</td>
+            <td>{{batch.courseName}}</td>
+            <td>{{batch.fees}}</td>
+            <td>
+                <!-- <button class="btn btn-success m-1" (click)="edit(batch.id)">Edit</button> -->
+                <button class="btn btn-success m-1" (click)="edit(batch.id)">Edit</button>
+                <button class="btn btn-danger m-1" (click)="delete(batch.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
