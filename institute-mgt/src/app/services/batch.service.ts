@@ -15,7 +15,8 @@ export class BatchService {
 
   getBatchList() : Observable<Batch[]> {
     let user : User = JSON.parse(sessionStorage.getItem("loggedInUser"));
-    return this.httpClient.get<Batch[]>(this.appUrl,{'headers':{'authentication':'Berear '+user.token}});
+    //return this.httpClient.get<Batch[]>(this.appUrl,{'headers':{'authentication':'Berear '+user.token}});
+    return this.httpClient.get<Batch[]>(this.appUrl);
   }
 
   save(batch : Batch) : Observable<Batch> {    

@@ -41,6 +41,12 @@
       "batchName": "E_Angular_8",
       "courseName": "Angular",
       "fees": "13800"
+    },
+    {
+      "id": "99",
+      "batchName": "ETLAgain_1",
+      "courseName": "Java",
+      "fees": "10000"
     }
   ],
   "students": [

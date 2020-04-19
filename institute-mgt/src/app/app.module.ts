@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BatchListComponent } from './batch-list/batch-list.component';
@@ -15,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthenticationService } from './auth/authentication.service';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { LoggingInterceptor } from './services/logging-interceptor.service';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { AuthGuardService } from './auth/auth-guard.service';
   providers: [
     LoggingService,
     AuthenticationService,
-    AuthGuardService
+    AuthGuardService,
+    {provide : HTTP_INTERCEPTORS , useClass : LoggingInterceptor ,multi : true},
+    {provide : HTTP_INTERCEPTORS , useClass : AuthInterceptor , multi : true }
   ],
   bootstrap: [AppComponent]
 })

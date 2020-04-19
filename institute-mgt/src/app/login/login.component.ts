@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
           }else{
             this.authenticationService.isLoggedIn = true;            
             sessionStorage.setItem("loggedInUser",JSON.stringify(user));
+            sessionStorage.setItem("token",user.token);
             this.router.navigate([this.authenticationService.loginSuccessPage],{queryParams : {name : user.name,city : 'pune'} });
           }          
         }
