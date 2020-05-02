@@ -26,7 +26,7 @@ import { AdminModule } from './admin/admin.module';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AdminModule,
+    //AdminModule, // this is require if eager loading
     AuthModule,    
     AppRoutingModule        
   ],

@@ -7,7 +7,8 @@ import { BatchEntryComponent } from './batch-entry/batch-entry.component';
 import { LoggingService } from '../services/logging.service';
 const routes : Routes = [
      {
-        path : 'admin' , component : AdminComponent, canActivate : [AuthGuardService],
+        //path : 'admin' , component : AdminComponent, canActivate : [AuthGuardService], //require fro eager loading
+        path : '' , component : AdminComponent, canActivate : [AuthGuardService],
         canActivateChild : [AuthGuardService],
         children : [
           {path : 'batchList', component : BatchListComponent},    

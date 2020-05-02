@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{name | uppercase | lowercase | uppercase}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{today | date : 'dd-MM-yyyy hh:mm:ss a'}}
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col">
+      {{person | json | uppercase}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{person.firstName | welcome}}
+    </div>
+    <div class="col">
+      {{person.lastName | welcome}}
+    </div>
+    <div class="col">
+      {{name | welcome}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      Account No : {{person.accNo | mask : 4 : '#'}}      
+    </div>
+    <div class="col">
+      Mobile No : {{person.mobileNo | mask : 3 : '*'}}
+    </div>
+    <div class="col">
+      Status : <span [class]="person.status | status">{{person.status}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      Account No : {{person1.accNo | mask : 4 : '#'}}      
+    </div>
+    <div class="col">
+      Mobile No : {{person1.mobileNo | mask : 3 : '*'}}
+    </div>
+    <div class="col">
+      Status : <span [class]="person1.status | status">{{person1.status}}</span>
+    </div>
+  </div>
+</div>
