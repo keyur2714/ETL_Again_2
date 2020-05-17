@@ -1,0 +1,79 @@
+<form [formGroup]="userEntryForm" novalidate (ngSubmit)="onSubmit()">
+        <mat-card class="user-card">
+          <mat-card-header>
+            <mat-card-title>User Details</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                <input matInput placeholder="Id" formControlName="id">
+                </mat-form-field>
+                <mat-error *ngIf="userEntryForm.controls['id'].hasError('required')">
+                    Id is <strong>required</strong>
+                </mat-error>
+            </div>
+            </div>  
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Username" formControlName="username">
+                </mat-form-field>
+                <mat-error *ngIf="userEntryForm.controls['username'].hasError('required')">
+                    Username is <strong>required</strong>
+                </mat-error>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input type="password" matInput placeholder="Password" formControlName="password">
+                  <mat-error *ngIf="userEntryForm.controls['password'].hasError('required')">
+                    Password is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Email" formControlName="email">
+                  <mat-error *ngIf="userEntryForm.controls['email'].hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                  <mat-error *ngIf="userEntryForm.controls['email'].hasError('email')">
+                    Invalid Email Address 
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Mobile No" formControlName="mobileNo">
+                    <mat-error *ngIf="userEntryForm.controls['mobileNo'].hasError('required')">
+                        MobileNo is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Age" formControlName="age">                       
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-radio-group formControlName="gender">
+                            <mat-radio-button value="Male">Male</mat-radio-button>
+                            <mat-radio-button value="FeMale">FeMale</mat-radio-button>                    
+                    </mat-radio-group>
+                </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+      

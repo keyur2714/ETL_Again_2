@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user.component';
+import { UserEntryComponent } from './user-entry/user-entry.component';
 const routes : Routes = [
-    {path : 'user' , component : UserComponent}
+    {path : 'user' , component : UserComponent},
+    {path : 'userEntry' , component : UserEntryComponent}
 ]
 @NgModule({
     imports :[

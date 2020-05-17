@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": 27,
+      "username": "keyur",
+      "password": "India@122",
+      "age": 33,
+      "gender": "Male",
+      "email": "keyurjava27@gmail.com",
+      "mobileNo": "7387029671"
+    },
+    {
+      "id": 26,
+      "username": "denish",
+      "password": "Bharat@122",
+      "age": 34,
+      "gender": "Male",
+      "email": "denishjava26@gmail.com",
+      "mobileNo": "7387029111"
+    },
+    {
+      "id": 44,
+      "username": "vinit",
+      "password": "Sachin@122",
+      "age": 34,
+      "gender": "Male",
+      "email": "vinitjava27@gmail.com",
+      "mobileNo": "7387029888"
+    },
+    {
+      "id": 24,
+      "username": "darshna",
+      "password": "Us@122",
+      "age": 32,
+      "gender": "FeMale",
+      "email": "darshjava27@gmail.com",
+      "mobileNo": "7387029565"
+    },
+    {
+      "id": 4,
+      "username": "ami",
+      "password": "Ami@122",
+      "age": 33,
+      "gender": "FeMale",
+      "email": "amijava27@gmail.com",
+      "mobileNo": "7387029766"
+    },
+    {
+      "id": "22",
+      "username": "piyus",
+      "password": "India@33",
+      "email": "piyush22@gmail.com",
+      "mobileNo": "9898012121",
+      "age": "34",
+      "gender": "Male"
+    }
+  ]
+}
