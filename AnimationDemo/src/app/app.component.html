@@ -1,0 +1,23 @@
+<h1>
+  {{title}}
+</h1>
+
+<p>
+  <button (click)="toggleState()">Change State</button>
+</p>
+
+<div style="width: 100px;height : 100px" [@stateTrigger]="state">
+</div>
+
+<p>
+  <button (click)="changeTableState()">Change Table State</button>
+</p>
+
+<table border="100px" top align="center" [@onOffTrigger]="tableState">
+  <tr>
+    <th>Name</th>
+  </tr>
+  <tr *ngFor="let name of studentNames">
+    <td>{{name}}</td>
+  </tr>
+</table>
