@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row form-group">
+    <div class="col">
+      <button class="btn btn-info" (click)="start()">Start</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-success" (click)="stop()">Stop</button>
+    </div>    
+    <div class="col">
+      {{num}}
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <ul *ngFor="let stud of studentList">
+        <li>{{stud.rollNo}}</li>
+        <li>{{stud.name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
